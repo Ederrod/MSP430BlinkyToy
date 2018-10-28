@@ -17,7 +17,9 @@ state_update()
     case off:
       new_red_on = 0; break;
     case bright:
-      new_red_on = 1; break;
+      new_red_on = 1; 
+      led_change = 1; 
+      break;
     case dim:
       new_red_on = (pwm_count < 1); break; /* 25% duty cycle */
     }
