@@ -44,7 +44,4 @@ switch_interrupt_handler()
       led_update();  
     }
   }
-  // switch_state_changed = 1;
-  // state_update(); 
-  // led_update();
 }
