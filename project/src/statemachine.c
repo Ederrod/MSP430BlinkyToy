@@ -24,7 +24,7 @@ state_update()
         state_led_mode(); 
         if (red_on) /* RED_LED */
         {
-            buzzer_set_period(100); 
+            buzzer_set_period(10000); 
             led_changed = 1; 
             red_on = 0; 
             green_on = 1;
