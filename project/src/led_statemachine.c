@@ -21,6 +21,7 @@ led_state_update()
 { 
     if (switch_state_down && switch_state_up)
     {
+        buzzer_advance_frequency();
         state_led_mode(); 
         if (red_on) /* RED_LED */
         { 
