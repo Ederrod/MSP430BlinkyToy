@@ -5,18 +5,23 @@
 
 static enum {dim=0, bright=1} led_mode; 
 
+
 void state_init()
 {
     led_mode = bright; 
 }
 
+void state_led_mode()
+{
+    led_mode = (led_mode + 1) % 2; 
+}
+
 void 
 state_update()
-{
-    //pwm_count = (pwm_count + 1) & 3; 
+{ 
     if (switch_state_down && switch_state_up)
     {
-        led_changed = 1; 
+        state_led_mode(); 
         if (red_on) /* RED_LED */
         {
             // TODO: if led is dim, do a led change
@@ -30,19 +35,24 @@ state_update()
             }
             else 
             {
-                led_mode = dim; 
-                if (red_on != new_red_on) {
-                    red_on = new_red_on;
-                    led_changed = 1;
-                }
+                led_mode = dim;
             }
         }
         else /* GREEN_LED */
         {
             // TODO: if led is dim, do a led change
             // else dim the led
-            red_on = 1; 
-            green_on = 0; 
+            if (led_mode == dim)
+            {
+                led_mode = bright; 
+                led_changed = 1; 
+                green_on = 0; 
+                red_on = 1; 
+            }
+            else 
+            {
+                led_mode = dim; 
+            }
         }
     }
 }
