@@ -30,7 +30,7 @@ void
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
-  switch_state = (p1val & SW1) ? 0 : 1; /* 0 when SW1 is up */
+  switch_state = (p2val & SW1) ? 0 : 1; /* 0 when SW1 is up */
   if (switch_state)
   {
     switch_state_down = 1; 
