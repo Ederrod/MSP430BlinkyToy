@@ -1,5 +1,6 @@
 #include <msp430.h>
 #include "led_statemachine.h"
+#include "buzzer.h"
 #include "switches.h"
 #include "led.h"
 
