@@ -24,35 +24,15 @@ state_update()
         state_led_mode(); 
         if (red_on) /* RED_LED */
         {
-            // TODO: if led is dim, do a led change
-            //else dim the led
-            if (led_mode == dim)
-            {
-                led_mode = bright; 
-                led_changed = 1; 
-                red_on = 0; 
-                green_on = 1; 
-            }
-            else 
-            {
-                led_mode = dim;
-            }
+            led_changed = 1; 
+            red_on = 0; 
+            green_on = 1;
         }
         else /* GREEN_LED */
         {
-            // TODO: if led is dim, do a led change
-            // else dim the led
-            if (led_mode == dim)
-            {
-                led_mode = bright; 
-                led_changed = 1; 
-                green_on = 0; 
-                red_on = 1; 
-            }
-            else 
-            {
-                led_mode = dim; 
-            }
+            led_changed = 1; 
+            green_on = 0; 
+            red_on = 1; 
         }
     }
 }

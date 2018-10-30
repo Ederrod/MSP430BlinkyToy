@@ -6,6 +6,7 @@
 void main(void) 
 {  
   configureClocks();
+  buzzer_init(); 
   state_init(); 
   switch_init();
   led_init();
