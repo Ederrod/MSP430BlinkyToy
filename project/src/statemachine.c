@@ -24,12 +24,14 @@ state_update()
         state_led_mode(); 
         if (red_on) /* RED_LED */
         {
+            buzzer_set_period(100); 
             led_changed = 1; 
             red_on = 0; 
             green_on = 1;
         }
         else /* GREEN_LED */
         {
+            buzzer_set_period(1000); 
             led_changed = 1; 
             green_on = 0; 
             red_on = 1; 
