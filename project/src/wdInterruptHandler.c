@@ -21,6 +21,7 @@ __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   }
   if (++decisecond_count == 25) {
     buzzer_advance_frequency();
+    switch_interrupt_handler();
     decisecond_count = 0;
   }
   //led_update();
