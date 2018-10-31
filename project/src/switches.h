@@ -11,7 +11,7 @@ void switch_init();
 void switch_state(char p2val); 
 void switch_interrupt_handler();
 
-extern char switch_state_down, switch_state_up; /* effectively boolean */
+extern char switch_state_down, switch_state_up, switch_state; /* effectively boolean */
  
 
 #endif // included
