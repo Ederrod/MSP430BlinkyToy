@@ -8,6 +8,7 @@
 #define SWITCHES (SW1 | SW2 | SW3 | SW4)		
 
 void switch_init();
+void switch_state(char p2val); 
 void switch_interrupt_handler();
 
 extern char switch_down_btn, switch_up_btn; /* effectively boolean */
