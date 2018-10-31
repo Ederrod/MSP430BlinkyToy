@@ -15,10 +15,25 @@ void led_state_init()
 void 
 led_state_update()
 { 
-    if (switch_down_btn == switch_up_btn)
+    if (switch_state_down && switch_state_up)
     {
         //buzzer_advance_frequency();
         //state_led_mode(); 
-        led_update(); 
+        if (red_on)
+        {
+            led_changed = 1; 
+            green_on = 1; 
+            red_on = 0; 
+        } 
+        else 
+        {
+            led_changed = 1; 
+            green_on = 0; 
+            red_on = 1; 
+        }
+
     }
+    led_update();
+    switch_state_down = 0; 
+    switch_state_up = 0; 
 }
