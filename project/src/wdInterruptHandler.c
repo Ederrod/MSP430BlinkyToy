@@ -15,10 +15,6 @@ void decisecond()
 void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static char second_count = 0, decisecond_count = 0;
-  if (P2IFG & SWITCHES) {	      /* did a button cause this interrupt? */
-    P2IFG &= ~SWITCHES;		      /* clear pending sw interrupts */
-    switch_interrupt_handler();	/* single handler for all switches */
-  }
   if (++second_count == 250) {
     //led_toggle();
     //switch_interrupt_handler();
@@ -29,5 +25,5 @@ __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
     //switch_interrupt_handler();
     decisecond_count = 0;
   }
-  //led_update();
+  // led_update();
 }

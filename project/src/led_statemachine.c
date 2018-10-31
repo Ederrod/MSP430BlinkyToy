@@ -24,17 +24,17 @@ led_state_update()
     {
         //buzzer_advance_frequency();
         //state_led_mode(); 
-        if (red_on) /* RED_LED */
-        { 
-            led_changed = 1; 
-            red_on = 0; 
-            green_on = 1;
-        }
-        else /* GREEN_LED */
-        {
-            led_changed = 1; 
-            green_on = 0; 
-            red_on = 1; 
-        }
+        // if (red_on) /* RED_LED */
+        // { 
+        //     led_changed = 1; 
+        //     red_on = 0; 
+        //     green_on = 1;
+        // }
+        // else /* GREEN_LED */
+        // {
+        //     led_changed = 1; 
+        //     green_on = 0; 
+        //     red_on = 1; 
+        // }
     }
 }
