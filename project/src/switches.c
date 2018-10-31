@@ -30,19 +30,19 @@ void switch_state(char p2val)
 {
   if (p2val & SW1)
   {
-    switch_state = btn1; 
+    switch_state = 1; 
   }
   if (p2val & SW2)
   {
-    switch_state = btn2; 
+    switch_state = 2; 
   }
   if (p2val & SW3)
   {
-    switch_state = btn3; 
+    switch_state = 3; 
   }
   if (p2val & SW4)
   {
-    switch_state = btn4; 
+    switch_state = 4; 
   }
 }
 
