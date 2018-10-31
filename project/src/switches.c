@@ -4,7 +4,7 @@
 #include "led_statemachine.h"
 
 char switch_state_down, switch_state_up; /* effectively boolean */
-static enum {btn1 = 1, btn2 = 2, btn3 = 3, btn4 = 4} switch_state_btn;
+static char switch_state; 
 
 static char 
 switch_update_interrupt_sense()
@@ -23,8 +23,6 @@ switch_init()			/* setup switch */
   P2IE = SWITCHES;		/* enable interrupts from switches */
   P2OUT |= SWITCHES;		/* pull-ups for switches */
   P2DIR &= ~SWITCHES;		/* set switches' bits for input */
-  switch_down_btn = 0; 
-  switch_up_btn = 0; 
   switch_update_interrupt_sense();
   led_update();
 }
