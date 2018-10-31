@@ -65,7 +65,7 @@ switch_interrupt_handler()
   //   }
   // }
 
-  switch(switch_state)
+  switch(switch_state_btn)
   {
   case btn1:
     /*turn red on bright*/
