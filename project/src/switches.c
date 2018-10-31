@@ -3,7 +3,7 @@
 #include "led.h"
 #include "led_statemachine.h"
 
-char switch_state_down, switch_state_up, switch_down_btn, switch_up_btn; /* effectively boolean */
+char switch_down_btn, switch_up_btn; /* effectively boolean */
 static enum {btn1 = 1, btn2 = 2, btn3 = 3, btn4 = 4} switch_state;
 
 static char 
