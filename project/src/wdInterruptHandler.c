@@ -7,7 +7,7 @@ void decisecond()
 {
   static char cnt = 0;		/* # deciseconds/frequecy change */
   if (++cnt > 2) {		
-    buzzer_advance_frequency();
+    //buzzer_advance_frequency();
     cnt = 0;
   }
 }
