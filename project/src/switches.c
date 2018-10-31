@@ -4,7 +4,7 @@
 #include "led_statemachine.h"
 
 char switch_down_btn, switch_up_btn; /* effectively boolean */
-static enum {btn1 = 1, btn2 = 2, btn3 = 3, btn4 = 4} switch_state;
+static enum {btn1 = 1, btn2 = 2, btn3 = 3, btn4 = 4} switch_state_btn;
 
 static char 
 switch_update_interrupt_sense()
@@ -30,19 +30,19 @@ void switch_state(char p2val)
 {
   if (p2val & SW1)
   {
-    switch_state = 1; 
+    switch_state_btn = 1; 
   }
   if (p2val & SW2)
   {
-    switch_state = 2; 
+    switch_state_btn = 2; 
   }
   if (p2val & SW3)
   {
-    switch_state = 3; 
+    switch_state_btn = 3; 
   }
   if (p2val & SW4)
   {
-    switch_state = 4; 
+    switch_state_btn = 4; 
   }
 }
 
