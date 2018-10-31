@@ -26,13 +26,13 @@ led_state_update()
         state_led_mode(); 
         if (red_on) /* RED_LED */
         { 
-            leds_changed = 1; 
+            led_changed = 1; 
             red_on = 0; 
             green_on = 1;
         }
         else /* GREEN_LED */
         {
-            leds_changed = 1; 
+            led_changed = 1; 
             green_on = 0; 
             red_on = 1; 
         }
