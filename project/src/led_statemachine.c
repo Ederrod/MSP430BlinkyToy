@@ -13,7 +13,8 @@ led_state_update()
 {
     switch (switch_btn)
     {
-    case SW1: 
+    case SW1:
+        led_changed = 1; 
         red_on = 1; 
         green_on = 0; 
         break; 
@@ -27,6 +28,8 @@ led_state_update()
     case SW4: 
         break; 
     }
+    switch_state_down = 0;
+    switch_state_up = 0; 
     led_update();
 }
 
