@@ -32,6 +32,7 @@ led_state_update()
         }
 
     }
+    led_update();
     switch_state_down = 0; 
     switch_state_up = 0; 
 }
