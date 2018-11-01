@@ -13,19 +13,37 @@ led_state_update()
 {
     switch (switch_btn)
     {
-    case SW1:
-        led_changed = 1; 
-        red_on = 1; 
-        green_on = 0; 
+    case SW1: /*BRIGHT_RED*/
+        if (green_on)
+        {
+            led_changed = 1;
+            green_on = 0; 
+            red_on = 1; 
+        }
         break; 
-    case SW2: 
-        led_changed = 1; 
-        green_on = 1; 
-        red_on = 0; 
+    case SW2: /*DIM_RED*/
+        if (green_on)
+        {
+            led_changed = 1;
+            green_on = 0; 
+            red_on = 1; 
+        }
         break; 
-    case SW3: 
+    case SW3: /*BRIGHT_GREEN*/
+        if (red_on)
+        {
+            led_changed = 1;
+            green_on = 1; 
+            red_on = 0; 
+        }
         break; 
-    case SW4: 
+    case SW4: /*DIM_GREEN*/
+        if (red_on)
+        {
+            led_changed = 1;
+            green_on = 1; 
+            red_on = 0; 
+        }
         break; 
     }
     switch_state_down = 0;
