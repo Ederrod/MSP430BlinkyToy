@@ -3,7 +3,6 @@
 #include "switches.h"
 #include "led.h"
 
-enum {btn1 = 1, btn2 = 2, btn3 = 3, btn4 = 4} btn_state; 
 
 /**
  * Based on the button that initiated the interrup make the led change
