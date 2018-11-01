@@ -11,21 +11,20 @@
 void 
 led_state_update()
 {
-    switch (btn_state)
+    switch (switch_btn)
     {
-    case btn1: 
-        led_changed = 1; 
+    case SW1: 
         red_on = 1; 
         green_on = 0; 
         break; 
-    case btn2: 
+    case SW2: 
         led_changed = 1; 
-        red_on = 0; 
         green_on = 1; 
+        red_on = 0; 
         break; 
-    case btn3: 
+    case SW3: 
         break; 
-    case btn4: 
+    case SW4: 
         break; 
     }
 }

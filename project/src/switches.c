@@ -37,22 +37,6 @@ get_switch(char p2val)
     if (p2val & switch_btn)
     {
       switch_state_up = 1; 
-      // save the btn 
-      switch (switch_btn)
-      {
-      case SW1:
-        btn_state = btn1; 
-        break; 
-      case SW2:
-        btn_state = btn1; 
-        break;
-      case SW3:
-        btn_state = btn1; 
-        break;
-      case SW4:
-        btn_state = btn1; 
-        break;
-      }
     }
   }
   else 
