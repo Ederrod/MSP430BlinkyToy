@@ -29,7 +29,7 @@ switch_init()			/* setup switch */
 void 
 switch_up_interrupt(char p2val)
 {
-  if ((p2val & switch_btn) == 0)
+  if (p2val & switch_btn)
   {
     switch_state_up = 1; 
   }
@@ -38,19 +38,19 @@ switch_up_interrupt(char p2val)
 void 
 switch_down_interrupt(char p2val)
 {
-  if ((p2val & SW1) == SW1)
+  if ((p2val & SW1) == 0)
   {
     switch_btn = SW1; 
   }
-  if ((p2val & SW2) == SW2)
+  if ((p2val & SW2) == 0)
   {
     switch_btn = SW2; 
   }
-  if ((p2val & SW3) == SW3)
+  if ((p2val & SW3) == 0)
   {
     switch_btn = SW3; 
   }
-  if ((p2val & SW4) == SW4)
+  if ((p2val & SW4) == 0)
   {
     switch_btn = SW4; 
   }
