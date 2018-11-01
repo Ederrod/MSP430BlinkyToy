@@ -27,6 +27,7 @@ led_state_update()
     case SW4: 
         break; 
     }
+    led_update();
 }
 
 // void 
