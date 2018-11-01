@@ -3,36 +3,56 @@
 #include "switches.h"
 #include "led.h"
 
-static enum {dim=0, bright=1} led_mode; 
+static enum {btn1 = 1, btn2 = 2, btn3 = 3, btn4 = 4} btn_state; 
 
-
-void led_state_init()
-{
-    led_mode = bright; 
-}
-
+/**
+ * Based on the button that initiated the interrup make the led change
+ * to the state of that button
+ */
 void 
 led_state_update()
-{ 
-    if (switch_state_down && switch_state_up)
+{
+    switch (btn_state)
     {
-        //buzzer_advance_frequency();
-        //state_led_mode(); 
-        if (red_on)
-        {
-            led_changed = 1; 
-            green_on = 1; 
-            red_on = 0; 
-        } 
-        else 
-        {
-            led_changed = 1; 
-            green_on = 0; 
-            red_on = 1; 
-        }
-
+    case btn1: 
+        led_changed = 1; 
+        red_on = 1; 
+        green_on = 0; 
+        break; 
+    case btn2: 
+        led_changed = 1; 
+        red_on = 0; 
+        green_on = 1; 
+        break; 
+    case btn3: 
+        break; 
+    case btn4: 
+        break; 
     }
-    led_update();
-    switch_state_down = 0; 
-    switch_state_up = 0; 
 }
+
+// void 
+// led_state_update()
+// { 
+//     if (switch_state_down && switch_state_up)
+//     {
+//         //buzzer_advance_frequency();
+//         //state_led_mode(); 
+//         if (red_on)
+//         {
+//             led_changed = 1; 
+//             green_on = 1; 
+//             red_on = 0; 
+//         } 
+//         else 
+//         {
+//             led_changed = 1; 
+//             green_on = 0; 
+//             red_on = 1; 
+//         }
+
+//     }
+//     switch_state_down = 0; 
+//     switch_state_up = 0; 
+//     led_update();
+// }
