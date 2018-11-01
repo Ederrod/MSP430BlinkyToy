@@ -20,6 +20,9 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
+
+        /*Do check if dim or bright*/
+        // if dim then set led to bright
         buzzer_advance_frequency(); 
         break; 
     case SW2: /*DIM_RED*/
@@ -50,6 +53,7 @@ led_state_update()
         buzzer_advance_frequency();
         break; 
     }
+    // reset switch states
     switch_state_down = 0;
     switch_state_up = 0; 
     led_update();
