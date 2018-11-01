@@ -20,6 +20,7 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
+        buzzer_advance_frequency(); 
         break; 
     case SW2: /*DIM_RED*/
         if (green_on)
@@ -28,6 +29,7 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
+        buzzer_advance_frequency() 
         break; 
     case SW3: /*BRIGHT_GREEN*/
         if (red_on)
@@ -36,6 +38,7 @@ led_state_update()
             green_on = 1; 
             red_on = 0; 
         }
+        buzzer_advance_frequency();
         break; 
     case SW4: /*DIM_GREEN*/
         if (red_on)
@@ -44,6 +47,7 @@ led_state_update()
             green_on = 1; 
             red_on = 0; 
         }
+        buzzer_advance_frequency();
         break; 
     }
     switch_state_down = 0;

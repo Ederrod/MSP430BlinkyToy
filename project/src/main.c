@@ -8,8 +8,7 @@
 void main(void) 
 {  
   configureClocks();
-  //buzzer_init(); 
-  led_state_init(); 
+  buzzer_init(); 
   switch_init();
   led_init();
 
