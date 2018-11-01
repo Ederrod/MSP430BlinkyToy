@@ -39,7 +39,8 @@ switch_interrupt_handler()
   {
     if (switch_state_down)
     {
-      switch_state_up = 1;  
+      switch_state_up = 1; 
+      led_update();  
     }
   }
 }

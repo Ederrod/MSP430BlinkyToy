@@ -1,6 +1,5 @@
 #include <msp430.h>
 #include "led_statemachine.h"
-#include "buzzer.h"
 #include "switches.h"
 #include "led.h"
 
@@ -24,14 +23,12 @@ led_state_update()
             led_changed = 1; 
             green_on = 1; 
             red_on = 0; 
-            led_update();
         } 
         else 
         {
             led_changed = 1; 
             green_on = 0; 
             red_on = 1; 
-            led_update();
         }
 
     }
