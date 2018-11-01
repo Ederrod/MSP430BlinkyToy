@@ -29,7 +29,7 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
-        buzzer_advance_frequency() 
+        buzzer_advance_frequency(); 
         break; 
     case SW3: /*BRIGHT_GREEN*/
         if (red_on)
