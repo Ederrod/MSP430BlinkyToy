@@ -27,39 +27,38 @@ switch_init()			/* setup switch */
 }
 
 void 
-get_switch(char p2val)
+switch_up_interrupt(char p2val)
 {
-  // Check if our down has been set off
-  if (switch_state_down)
+  if ((p2val & switch_btn) == 0)
   {
-    // check if the switch that casued the down state is no longer in down state.
-    if (p2val & switch_btn)
-    {
-      switch_state_up = 1; 
-    }
+    switch_state_up = 1; 
   }
-  else 
+}
+
+void 
+switch_down_interrupt(char p2val)
+{
+  if ((p2val & SW1) == SW1)
   {
-    // find who caused down state
-    switch_state_down = 1; 
-    if ((p2val & SW1) == 0)
-    {
-      switch_btn = SW1; 
-    }
-    if ((p2val & SW2) == 0)
-    {
-      switch_btn = SW2; 
-    }
-    if ((p2val & SW3) == 0)
-    {
-      switch_btn = SW3; 
-    }
-    if ((p2val & SW4) == 0)
-    {
-      switch_btn = SW4; 
-    }
+    switch_btn = SW1; 
+  }
+  if ((p2val & SW2) == SW2)
+  {
+    switch_btn = SW2; 
+  }
+  if ((p2val & SW3) == SW3)
+  {
+    switch_btn = SW3; 
+  }
+  if ((p2val & SW4) == SW4)
+  {
+    switch_btn = SW4; 
   }
 
+  if (switch_btn)
+  {
+    switch_state_down = 1; 
+  }
 }
 
 /**
@@ -70,10 +69,14 @@ void
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense(); 
-  get_switch(p2val);
-  if (switch_state_down && switch_state_up)
+  if (switch_state_down)
   {
+    switch_up_interrupt(p2val); 
     led_state_update(); 
+  }
+  else 
+  {
+    switch_down_interrupt(p2val); 
   }
 }
 
