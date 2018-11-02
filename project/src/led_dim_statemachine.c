@@ -22,18 +22,26 @@ led_dim_fast_clock()	/* quickly cycle through 0...3 */
 void 
 led_dim_state_update()
 {
-  char new_red_on;
-  switch (led_mode) {
+  char new_led_on;
+  switch (led_mode) 
+  {
   case off:
-    new_red_on = 0; break;
+    new_led_on = 0; break;
   case bright:
-    new_red_on = 1; break;
+    new_led_on = 1; break;
   case dim:
-    new_red_on = (pwm_count < 1); break; /* 25% duty cycle */
+    new_led_on = (pwm_count < 1); break; /* 25% duty cycle */
   }
-  if (red_on != new_red_on) {
-    red_on = new_red_on;
+  if (switch_btn == SW2 && red_on != new_led_on)
+{
+    red_on = new_led_on;
     led_changed = 1;
+  }
+
+  if (switch_btn == SW4 && green_on != new_led_on)
+  {
+      green_on = new_led_on; 
+      led_changed = 1; 
   }
 }
 
