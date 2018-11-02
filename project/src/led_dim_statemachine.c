@@ -1,6 +1,8 @@
 #include <msp430.h>
+#include "led_dim_statemachine.h"
 #include "statemachine.h"
 #include "led.h"
+#include "switches.h"
 
 
 // state variables 
