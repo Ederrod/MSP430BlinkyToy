@@ -3,7 +3,7 @@
 #include "switches.h"
 #include "led.h"
 
-static enum {off=0, dim=1} led_mode; 
+static enum {dim=0, bright=1} led_mode; 
 static char pwm_count = 0; 
 
 void 
@@ -46,10 +46,11 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
+        
         char new_red_on; 
-        if (led_mode == off)
+        if (led_mode == bright)
         {
-            new_red_on = 0; 
+            new_red_on = 1; 
         }
         if (led_mode == dim)
         {
