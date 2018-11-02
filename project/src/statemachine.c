@@ -22,33 +22,40 @@ led_state_update()
         }
         break; 
     case SW2: /*DIM_RED*/
-        if (green_on)
-        {
-            led_changed = 1;
-            green_on = 0; 
-            red_on = 1; 
-        }
+        // turn red on
+        red_on = 1; 
+        green_on = 0; 
+        // if (green_on)
+        // {
+        //     led_changed = 1;
+        //     green_on = 0; 
+        //     red_on = 1; 
+        // }
         led_dim_state_update();
         //buzzer_advance_frequency(); 
         break; 
     case SW3: /*BRIGHT_GREEN*/
         // turn green on
         green_on = 1;
+        // if red is on, then turn off
         if (red_on)
         {
             led_changed = 1;
-            //green_on = 1; 
             red_on = 0; 
         }
         //buzzer_advance_frequency();
         break; 
     case SW4: /*DIM_GREEN*/
-        if (red_on)
-        {
-            led_changed = 1;
-            green_on = 1; 
-            red_on = 0; 
-        }
+        // turn green on 
+        green_on = 1; 
+        red_on = 0; 
+        led_dim_state_update();
+        // if (red_on)
+        // {
+        //     led_changed = 1;
+        //     green_on = 1; 
+        //     red_on = 0; 
+        // }
         //buzzer_advance_frequency();
         break; 
     }
