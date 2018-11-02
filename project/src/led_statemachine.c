@@ -3,6 +3,20 @@
 #include "switches.h"
 #include "led.h"
 
+static enum {off=0, dim=1} led_mode; 
+static char pwm_count = 0; 
+
+void 
+led_slow_clock()
+{
+    led_mode = (led_mode + 1) % 2; 
+}
+
+void 
+led_fast_clock()
+{
+    pwm_count = (pwm_count + 1) & 2; 
+}
 
 /**
  * Based on the button that initiated the interrup make the led change
@@ -23,7 +37,7 @@ led_state_update()
 
         /*Do check if dim or bright*/
         // if dim then set led to bright
-        buzzer_advance_frequency(); 
+        //buzzer_advance_frequency(); 
         break; 
     case SW2: /*DIM_RED*/
         if (green_on)
@@ -32,7 +46,20 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
-        buzzer_advance_frequency(); 
+        char new_red_on; 
+        if (led_mode == off)
+        {
+            new_red_on = 0; 
+        }
+        if (led_mode == dim)
+        {
+            new_red_on = (pwm_count < 1); 
+        }
+        if (red_on != new_red_on) {
+            red_on = new_red_on;
+            led_changed = 1;
+        }
+        //buzzer_advance_frequency(); 
         break; 
     case SW3: /*BRIGHT_GREEN*/
         if (red_on)
@@ -41,7 +68,7 @@ led_state_update()
             green_on = 1; 
             red_on = 0; 
         }
-        buzzer_advance_frequency();
+        //buzzer_advance_frequency();
         break; 
     case SW4: /*DIM_GREEN*/
         if (red_on)
@@ -50,7 +77,7 @@ led_state_update()
             green_on = 1; 
             red_on = 0; 
         }
-        buzzer_advance_frequency();
+        //buzzer_advance_frequency();
         break; 
     }
     // reset switch states
