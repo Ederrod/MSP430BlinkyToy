@@ -1,22 +1,8 @@
 #include <msp430.h>
 #include "led_statemachine.h"
+#include "led_dim_statemachine.h"
 #include "switches.h"
 #include "led.h"
-
-static enum {dim=0, bright=1} led_mode; 
-static char pwm_count = 0; 
-
-void 
-led_slow_clock()
-{
-    led_mode = (led_mode + 1) % 2; 
-}
-
-void 
-led_fast_clock()
-{
-    pwm_count = (pwm_count + 1) & 2; 
-}
 
 /**
  * Based on the button that initiated the interrup make the led change
@@ -34,10 +20,6 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
-
-        /*Do check if dim or bright*/
-        // if dim then set led to bright
-        //buzzer_advance_frequency(); 
         break; 
     case SW2: /*DIM_RED*/
         if (green_on)
@@ -46,20 +28,7 @@ led_state_update()
             green_on = 0; 
             red_on = 1; 
         }
-        
-        char new_red_on; 
-        if (led_mode == bright)
-        {
-            new_red_on = 1; 
-        }
-        if (led_mode == dim)
-        {
-            new_red_on = (pwm_count < 1); 
-        }
-        if (red_on != new_red_on) {
-            red_on = new_red_on;
-            led_changed = 1;
-        }
+        led_dim_state_update();
         //buzzer_advance_frequency(); 
         break; 
     case SW3: /*BRIGHT_GREEN*/

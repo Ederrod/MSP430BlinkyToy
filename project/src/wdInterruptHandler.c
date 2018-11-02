@@ -7,10 +7,10 @@ __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static char blink_count = 0;
   if(switch_btn == SW2){
     if (++blink_count == 125) {
-      led_slow_clock(); 
+      led_dim_slow_clock(); 
       blink_count = 0;
     }
-    led_fast_clock(); 
+    led_dim_fast_clock(); 
     led_state_update(); 
   }
 }
