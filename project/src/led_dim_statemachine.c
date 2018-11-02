@@ -10,7 +10,7 @@ static char pwm_count = 0;
 void
 led_dim_slow_clock()		/* slowly cycle through {off, dim, bright} */
 {
-  led_mode = (ledMode + 1) % 3;
+  led_mode = (led_mode + 1) % 3;
 }
 
 void
@@ -23,7 +23,7 @@ void
 led_dim_state_update()
 {
   char new_red_on;
-  switch (ledMode) {
+  switch (led_mode) {
   case off:
     new_red_on = 0; break;
   case bright:
