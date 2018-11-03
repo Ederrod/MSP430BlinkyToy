@@ -26,6 +26,9 @@ switch_init()			/* setup switch */
   led_update();
 }
 
+/**
+ * Function to check that the up interrupt was caused by the same Switch. 
+ */
 void 
 switch_up_interrupt(char p2val)
 {
@@ -35,6 +38,9 @@ switch_up_interrupt(char p2val)
   }
 }
 
+/**
+ * Function to check which Switch casued the down interrupt.
+ */
 void 
 switch_down_interrupt(char p2val)
 {
@@ -62,13 +68,16 @@ switch_down_interrupt(char p2val)
 }
 
 /**
- * Find out when up and down event is caused by the same button.  
+ * Interrupt handler, will only make state changes when 
+ * we get a down and up action, meaning a button press.
  */
 
 void 
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense(); 
+  // If our down event has already been triggered check that
+  // the current interrupt was and up event and casued by the same switch
   if (switch_state_down)
   {
     switch_up_interrupt(p2val); 
@@ -79,22 +88,3 @@ switch_interrupt_handler()
     switch_down_interrupt(p2val); 
   }
 }
-
-// void
-// switch_interrupt_handler()
-// {
-//   char p2val = switch_update_interrupt_sense();
-//   switch_state = (p2val & SW1) ? 0 : 1; /* 0 when SW1 is up */
-//   if (switch_state)
-//   {
-//     switch_state_down = 1; 
-//   }
-//   else 
-//   {
-//     if (switch_state_down)
-//     {
-//       switch_state_up = 1; 
-//       led_state_update(); 
-//     }
-//   }
-// }

@@ -2,6 +2,12 @@
 #include "led.h"
 #include "switches.h"
 
+
+/**
+ * We only want this interrupt to have affect when 
+ * in our system we are at State 2 and State 4, meaning that
+ * both Switch 2 and Switch 4 were pressed. 
+ */
 void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static char blink_count = 0;

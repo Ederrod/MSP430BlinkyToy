@@ -59,29 +59,3 @@ led_state_update()
     switch_state_up = 0; 
     led_update();
 }
-
-// void 
-// led_state_update()
-// { 
-//     if (switch_state_down && switch_state_up)
-//     {
-//         //buzzer_advance_frequency();
-//         //state_led_mode(); 
-//         if (red_on)
-//         {
-//             led_changed = 1; 
-//             green_on = 1; 
-//             red_on = 0; 
-//         } 
-//         else 
-//         {
-//             led_changed = 1; 
-//             green_on = 0; 
-//             red_on = 1; 
-//         }
-
-//     }
-//     switch_state_down = 0; 
-//     switch_state_up = 0; 
-//     led_update();
-// }

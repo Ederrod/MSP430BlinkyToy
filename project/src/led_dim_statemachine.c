@@ -21,6 +21,10 @@ led_dim_fast_clock()	/* quickly cycle through 0...3 */
   pwm_count = (pwm_count + 1) & 3; 
 }
 
+/**
+ * Special state machine for dimming leds in msp430.
+ * It changes from on to semi on to fully on to make the illusion as if it was dimmed. 
+ */
 void 
 led_dim_state_update()
 {
