@@ -14,43 +14,32 @@ led_state_update()
     switch (switch_btn)
     {
     case SW1: /*BRIGHT_RED*/
-      // if (green_on)
-      // {
-            led_changed = 1;
-            green_on = 0; 
-            red_on = 1; 
-	    // }
+        // set red on and green on
+        led_changed = 1;
+        green_on = 0; 
+        red_on = 1; 
         break; 
     case SW2: /*DIM_RED*/
         // turn red on
-      // if (green_on)
-      // {
-            led_changed = 1;
-            red_on = 1; 
-            green_on = 0; 
-	    // }
+        led_changed = 1;
+        red_on = 1; 
+        green_on = 0; 
         led_dim_state_update();
         //buzzer_advance_frequency(); 
         break; 
     case SW3: /*BRIGHT_GREEN*/
         // turn green on
         // if red is on, then turn off
-      // if (red_on)
-      // {
-            led_changed = 1;
-            green_on = 1; 
-            red_on = 0; 
-	    // }
+        led_changed = 1;
+        green_on = 1; 
+        red_on = 0; 
         //buzzer_advance_frequency();
         break; 
     case SW4: /*DIM_GREEN*/
         // turn green on if our red is on
-      // if (red_on)
-      // {
-            led_changed = 1;
-            green_on = 1; 
-            red_on = 0; 
-	    // }
+        led_changed = 1;
+        green_on = 1; 
+        red_on = 0; 
         led_dim_state_update();
         //buzzer_advance_frequency();
         break; 
