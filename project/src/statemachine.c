@@ -51,6 +51,7 @@ led_state_update()
             green_on = 1; 
             red_on = 0; 
         }
+        led_dim_state_update();
         //buzzer_advance_frequency();
         break; 
     }
