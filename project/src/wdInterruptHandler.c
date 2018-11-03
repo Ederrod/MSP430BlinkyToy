@@ -2,6 +2,7 @@
 #include "led.h"
 #include "switches.h"
 #include "led_dim_statemachine.h"
+#include "statemachine.h"
 
 
 /**
