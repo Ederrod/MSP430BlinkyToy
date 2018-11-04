@@ -24,16 +24,13 @@ void delay_us(unsigned int us )
        __delay_cycles(1);
 }
 
-void beep(unsigned short note, unsigned int duration)
+void beep(unsigned short note)
 {
     int i;
     long delay = (long)(10000/note);  //This is the semiperiod of each note.
-    long time = (long)((duration*100)/(delay*2));  //This is how much time we need to spend on the note.
-    for (i=0;i<time;i++)
-    {
-        buzzer_set_period(note); 
-        delay_us(delay);   //...for the other semiperiod.
-    }
+    //long time = (long)((duration*100)/(delay*2));  //This is how much time we need to spend on the note.
+    buzzer_set_period(note);
+    delay_us(delay);  
     delay_ms(20); //Add a little delay to separate the single notes
 }
 
