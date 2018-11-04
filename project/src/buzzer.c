@@ -5,34 +5,32 @@
 static unsigned int period = 1000;
 static signed int rate = 200;	
 
-static short music[] = {C3,D3,E3,F3,G3,A3,B3}; 
-
 #define MIN_PERIOD 1000
 #define MAX_PERIOD 4000
 
-void delay_ms(unsigned int ms )
-{
-    unsigned int i;
-    for (i = 0; i<= ms; i++)
-       __delay_cycles(500); //Built-in function that suspends the execution for 500 cicles
-}
+// void delay_ms(unsigned int ms )
+// {
+//     unsigned int i;
+//     for (i = 0; i<= ms; i++)
+//        __delay_cycles(500); //Built-in function that suspends the execution for 500 cicles
+// }
 
-void delay_us(unsigned int us )
-{
-    unsigned int i;
-    for (i = 0; i<= us/2; i++)
-       __delay_cycles(1);
-}
+// void delay_us(unsigned int us )
+// {
+//     unsigned int i;
+//     for (i = 0; i<= us/2; i++)
+//        __delay_cycles(1);
+// }
 
-void beep(unsigned short note)
-{
-    int i;
-    long delay = (long)(10000/note);  //This is the semiperiod of each note.
-    //long time = (long)((duration*100)/(delay*2));  //This is how much time we need to spend on the note.
-    buzzer_set_period(note);
-    delay_us(delay);  
-    delay_ms(20); //Add a little delay to separate the single notes
-}
+// void beep(unsigned short note)
+// {
+//     int i;
+//     long delay = (long)(10000/note);  //This is the semiperiod of each note.
+//     //long time = (long)((duration*100)/(delay*2));  //This is how much time we need to spend on the note.
+//     buzzer_set_period(note);
+//     delay_us(delay);  
+//     delay_ms(20); //Add a little delay to separate the single notes
+// }
 
 void buzzer_init()
 {

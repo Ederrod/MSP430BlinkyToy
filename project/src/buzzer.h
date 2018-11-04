@@ -40,9 +40,9 @@
 #define C6  855
 #define CS6 902
 
-void delay_ms(unsigned int ms); 
-void delay_us(unsigned int us);
-void beep(unsigned short note);  
+// void delay_ms(unsigned int ms); 
+// void delay_us(unsigned int us);
+// void beep(unsigned short note);  
 
 void buzzer_init();
 void buzzer_advance_frequency();

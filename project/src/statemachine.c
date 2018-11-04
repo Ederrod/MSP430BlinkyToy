@@ -19,6 +19,7 @@ led_state_update()
         led_changed = 1;
         green_on = 0; 
         red_on = 1; 
+        buzzer_advance_frequency(); 
         break; 
     case SW2: /*DIM_RED*/
         // turn red on
@@ -34,7 +35,7 @@ led_state_update()
         led_changed = 1;
         green_on = 1; 
         red_on = 0; 
-        //buzzer_advance_frequency();
+        buzzer_advance_frequency();
         break; 
     case SW4: /*DIM_GREEN*/
         // turn green on if our red is on
@@ -42,7 +43,7 @@ led_state_update()
         green_on = 1; 
         red_on = 0; 
         led_dim_state_update();
-        //buzzer_advance_frequency();
+        buzzer_advance_frequency();
         break; 
     }
     // reset switch states
