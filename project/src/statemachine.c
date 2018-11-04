@@ -3,6 +3,7 @@
 #include "led_dim_statemachine.h"
 #include "switches.h"
 #include "led.h"
+#include "buzzer.h"
 
 /**
  * Based on the button that initiated the interrup make the led change
