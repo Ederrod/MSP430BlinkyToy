@@ -61,96 +61,96 @@ void buzzer_advance_frequency()
   //   period += (rate << 1);
   // }
   // buzzer_set_period(period);
-    beep(A3, 500);
-    beep(A3, 500);
-    beep(A3, 500);
-    beep(F3, 350);
-    beep(CS3, 150);
-    beep(A3, 500);
-    beep(F3, 350);
-    beep(CS3, 150);
-    beep(A3, 650);
+    beep(A3);
+    beep(A3);
+    beep(A3);
+    beep(F3);
+    beep(CS3);
+    beep(A3);
+    beep(F3);
+    beep(CS3);
+    beep(A3);
  
     delay_ms(150);
     //end of first bit
  
-    beep(E4, 500);
-    beep(E4, 500);
-    beep(E4, 500);
-    beep(FS3, 350);
-    beep(CS3, 150);
-    beep(GS3, 500);
-    beep(F3, 350);
-    beep(CS3, 150);
-    beep(A3, 650);
+    beep(E4);
+    beep(E4);
+    beep(E4);
+    beep(FS3);
+    beep(CS3);
+    beep(GS3);
+    beep(F3);
+    beep(CS3);
+    beep(A3);
  
     delay_ms(150);
     //end of second bit...
  
-    beep(A5, 500);
-    beep(A3, 300);
-    beep(A3, 150);
-    beep(A5, 400);
-    beep(GS5, 200);
-    beep(G5, 200);
-    beep(FS5, 125);
-    beep(F5, 125);
-    beep(FS5, 250);
+    beep(A5);
+    beep(A3);
+    beep(A3);
+    beep(A5);
+    beep(GS5);
+    beep(G5);
+    beep(FS5);
+    beep(F5);
+    beep(FS5);
  
     delay_ms(250);
  
-    beep(AS33, 250);
-    beep(DS5, 400);
-    beep(D5, 200);
-    beep(CS5, 200);
-    beep(CS3, 125);
-    beep(B3, 125);
-    beep(CS3, 250);
+    beep(AS3);
+    beep(DS5);
+    beep(D5);
+    beep(CS5);
+    beep(CS3);
+    beep(B3);
+    beep(CS3);
  
     delay_ms(250);
  
-    beep(F3, 125);
-    beep(GS3, 500);
-    beep(F3, 375);
-    beep(A3, 125);
-    beep(CS3, 500);
-    beep(A3, 375);
-    beep(CS3, 125);
-    beep(E4, 650);
+    beep(F3);
+    beep(GS3);
+    beep(F3);
+    beep(A3);
+    beep(CS3);
+    beep(A3);
+    beep(CS3);
+    beep(E4);
  
     //end of third bit... (ThouG5 it doesn't play well)
     //let's repeat it
  
-    beep(A5, 500);
-    beep(A3, 300);
-    beep(A3, 150);
-    beep(A5, 400);
-    beep(GS5, 200);
-    beep(G5, 200);
-    beep(FS5, 125);
-    beep(F5, 125);
-    beep(FS5, 250);
+    beep(A5);
+    beep(A3);
+    beep(A3);
+    beep(A5);
+    beep(GS5);
+    beep(G5);
+    beep(FS5);
+    beep(F5);
+    beep(FS5);
  
     delay_ms(250);
  
-    beep(AS3, 250);
-    beep(DS5, 400);
-    beep(D5, 200);
-    beep(CS5, 200);
-    beep(CS3, 125);
-    beep(B3, 125);
-    beep(CS3, 250);
+    beep(AS3);
+    beep(DS5);
+    beep(D5);
+    beep(CS5);
+    beep(CS3);
+    beep(B3);
+    beep(CS3);
  
     delay_ms(250);
  
-    beep(F3, 250);
-    beep(GS3, 500);
-    beep(F3, 375);
-    beep(CS3, 125);
-    beep(A3, 500);
-    beep(F3, 375);
-    beep(CS3, 125);
-    beep(A3, 650);
+    beep(F3);
+    beep(GS3);
+    beep(F3);
+    beep(CS3);
+    beep(A3);
+    beep(F3);
+    beep(CS3);
+    beep(A3);
 }
 
 void buzzer_set_period(short cycles)
