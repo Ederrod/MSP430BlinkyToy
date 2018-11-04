@@ -49,108 +49,108 @@ void buzzer_init()
     P2SEL |= BIT6;
     P2DIR = BIT6;		/* enable output to speaker (P2.6) */
 
-    //buzzer_advance_frequency();	/* start buzzing!!! */
+    buzzer_advance_frequency();	/* start buzzing!!! */
 }
 
 void buzzer_advance_frequency() 
 {
-  // period += rate;
-  // if ((rate > 0 && (period > MAX_PERIOD)) || 
-  //     (rate < 0 && (period < MIN_PERIOD))) {
-  //   rate = -rate;
-  //   period += (rate << 1);
-  // }
-  // buzzer_set_period(period);
-    beep(A3);
-    beep(A3);
-    beep(A3);
-    beep(F3);
-    beep(CS3);
-    beep(A3);
-    beep(F3);
-    beep(CS3);
-    beep(A3);
+  period += rate;
+  if ((rate > 0 && (period > MAX_PERIOD)) || 
+      (rate < 0 && (period < MIN_PERIOD))) {
+    rate = -rate;
+    period += (rate << 1);
+  }
+  buzzer_set_period(period);
+    // beep(A3);
+    // beep(A3);
+    // beep(A3);
+    // beep(F3);
+    // beep(CS3);
+    // beep(A3);
+    // beep(F3);
+    // beep(CS3);
+    // beep(A3);
  
-    delay_ms(150);
-    //end of first bit
+    // delay_ms(150);
+    // //end of first bit
  
-    beep(E4);
-    beep(E4);
-    beep(E4);
-    beep(FS3);
-    beep(CS3);
-    beep(GS3);
-    beep(F3);
-    beep(CS3);
-    beep(A3);
+    // beep(E4);
+    // beep(E4);
+    // beep(E4);
+    // beep(FS3);
+    // beep(CS3);
+    // beep(GS3);
+    // beep(F3);
+    // beep(CS3);
+    // beep(A3);
  
-    delay_ms(150);
-    //end of second bit...
+    // delay_ms(150);
+    // //end of second bit...
  
-    beep(A5);
-    beep(A3);
-    beep(A3);
-    beep(A5);
-    beep(GS5);
-    beep(G5);
-    beep(FS5);
-    beep(F5);
-    beep(FS5);
+    // beep(A5);
+    // beep(A3);
+    // beep(A3);
+    // beep(A5);
+    // beep(GS5);
+    // beep(G5);
+    // beep(FS5);
+    // beep(F5);
+    // beep(FS5);
  
-    delay_ms(250);
+    // delay_ms(250);
  
-    beep(AS3);
-    beep(DS5);
-    beep(D5);
-    beep(CS5);
-    beep(CS3);
-    beep(B3);
-    beep(CS3);
+    // beep(AS3);
+    // beep(DS5);
+    // beep(D5);
+    // beep(CS5);
+    // beep(CS3);
+    // beep(B3);
+    // beep(CS3);
  
-    delay_ms(250);
+    // delay_ms(250);
  
-    beep(F3);
-    beep(GS3);
-    beep(F3);
-    beep(A3);
-    beep(CS3);
-    beep(A3);
-    beep(CS3);
-    beep(E4);
+    // beep(F3);
+    // beep(GS3);
+    // beep(F3);
+    // beep(A3);
+    // beep(CS3);
+    // beep(A3);
+    // beep(CS3);
+    // beep(E4);
  
-    //end of third bit... (ThouG5 it doesn't play well)
-    //let's repeat it
+    // //end of third bit... (ThouG5 it doesn't play well)
+    // //let's repeat it
  
-    beep(A5);
-    beep(A3);
-    beep(A3);
-    beep(A5);
-    beep(GS5);
-    beep(G5);
-    beep(FS5);
-    beep(F5);
-    beep(FS5);
+    // beep(A5);
+    // beep(A3);
+    // beep(A3);
+    // beep(A5);
+    // beep(GS5);
+    // beep(G5);
+    // beep(FS5);
+    // beep(F5);
+    // beep(FS5);
  
-    delay_ms(250);
+    // delay_ms(250);
  
-    beep(AS3);
-    beep(DS5);
-    beep(D5);
-    beep(CS5);
-    beep(CS3);
-    beep(B3);
-    beep(CS3);
+    // beep(AS3);
+    // beep(DS5);
+    // beep(D5);
+    // beep(CS5);
+    // beep(CS3);
+    // beep(B3);
+    // beep(CS3);
  
-    delay_ms(250);
+    // delay_ms(250);
  
-    beep(F3);
-    beep(GS3);
-    beep(F3);
-    beep(CS3);
-    beep(A3);
-    beep(F3);
-    beep(CS3);
-    beep(A3);
+    // beep(F3);
+    // beep(GS3);
+    // beep(F3);
+    // beep(CS3);
+    // beep(A3);
+    // beep(F3);
+    // beep(CS3);
+    // beep(A3);
 }
 
 void buzzer_set_period(short cycles)
