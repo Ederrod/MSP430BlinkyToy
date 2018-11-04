@@ -1,8 +1,9 @@
-.text
-    .balign 2
-    .global led_state_update
-    .type led_state_update, @function
+    .arch msp430g2553
+    .p2align 1,0
 
+    .text
+
+    .global led_state_update
 led_state_update: 
     mov.b &switch_btn, r12
     cmp.w #2,  r12 { jeq .L4
