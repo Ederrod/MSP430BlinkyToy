@@ -20,27 +20,27 @@ case1:
     mov.b #1, &led_changed
     mov.b #0, &green_on
     mov.b #1, &red_on
-    call  #buzzer_advanced_frequency
+    call  #buzzer_advance_frequency
     jmp   end
 case2: 
     mov.b #1, &led_changed
     mov.b #1, &red_on
     mov.b #0, &green_on
     call  #led_dim_state_update
-    call  #buzzer_advanced_frequency
+    call  #buzzer_advance_frequency
     jmp   end
 case3: 
     mov.b #1, &led_changed
     mov.b #1, &green_on
     mov.b #0, &red_on
-    call  #buzzer_advanced_frequency
+    call  #buzzer_advance_frequency
     jmp   end
 case4: 
     mov.b #1, &led_changed
     mov.b #0, &red_on
     mov.b #1, &green_on
     call  #led_dim_state_update
-    call  #buzzer_advanced_frequency
+    call  #buzzer_advance_frequency
     jmp   end
 
 end: 
