@@ -25,7 +25,7 @@ led_state_update()
         red_on = 1; 
         green_on = 0; 
         led_dim_state_update();
-        //buzzer_advance_frequency(); 
+        buzzer_advance_frequency(); 
         break; 
     case SW3: /*BRIGHT_GREEN*/
         // turn green on

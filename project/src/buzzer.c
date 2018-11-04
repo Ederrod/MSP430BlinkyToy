@@ -5,6 +5,8 @@
 static unsigned int period = 1000;
 static signed int rate = 200;	
 
+static short[] music = {C3,D3,E3,F3,G3,A3,B3}; 
+
 #define MIN_PERIOD 1000
 #define MAX_PERIOD 4000
 
@@ -28,13 +30,18 @@ void buzzer_init()
 
 void buzzer_advance_frequency() 
 {
-  period += rate;
-  if ((rate > 0 && (period > MAX_PERIOD)) || 
-      (rate < 0 && (period < MIN_PERIOD))) {
-    rate = -rate;
-    period += (rate << 1);
+  // period += rate;
+  // if ((rate > 0 && (period > MAX_PERIOD)) || 
+  //     (rate < 0 && (period < MIN_PERIOD))) {
+  //   rate = -rate;
+  //   period += (rate << 1);
+  // }
+  // buzzer_set_period(period);
+  int i; 
+  for (i=0; i < 7; i++)
+  {
+    buzzer_advance_frequency(music[i]); 
   }
-  buzzer_set_period(period);
 }
 
 void buzzer_set_period(short cycles)
