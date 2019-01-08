@@ -1,4 +1,5 @@
-#Lab 2: Blinky-Buzzy Toys
+## The project folder was my implementation the rest of the code was developled by the Computer Architecture staff in UTEP
+## Lab 2: Blinky-Buzzy Toys
 ## Project Description 
 
 Impressed with your work, ACME Solutions is now
